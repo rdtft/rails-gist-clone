@@ -4,7 +4,7 @@
     <div class="gist-meta">
       <%= @gist.created_at.to_s(:long) %> by <%= @gist.user.email %>
           <div class='pull-right'>
-            <% if current_user.id == @gist.user_id %>
+            <% if user_signed_in? && current_user.id == @gist.user_id %>
               <%= link_to 'Edit', edit_gist_path(@gist), class: 'btn btn-default' %>
               <%= link_to 'Destroy', @gist, method: :delete, data: { confirm: 'Are you sure?' },  class: 'btn btn-danger' %>
             <% end %>
