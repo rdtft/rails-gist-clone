@@ -1,0 +1,39 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+  <div class="gist">
+    <div class="gist-meta">
+      <%= @gist.created_at.to_s(:long) %> by <%= @gist.user.email %>
+          <div class='pull-right'>
+            <% if current_user.id == @gist.user_id %>
+              <%= link_to 'Edit', edit_gist_path(@gist), class: 'btn btn-default' %>
+              <%= link_to 'Destroy', @gist, method: :delete, data: { confirm: 'Are you sure?' },  class: 'btn btn-danger' %>
+            <% end %>
+        </div>
+      <div class="gist-description"><%= @gist.description %></div>
+    </div>
+    <pre><code><%= @gist.content %></code></pre>
+  </div>
+
+  <div id="comments">
+    <% @gist.comments.each do |comment| %>
+      <div class="panel panel-info">
+        <div class="panel-heading"><%= comment.user.email %></div>
+        <div class="panel-body">
+          <%== comment.body.gsub(/\n/, "</br>") %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <%= form_for([@gist, @gist.comments.build]) do |f| %>
+        <div class="form-group">
+          <%= f.text_area :body, :rows => 10, class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <%= f.submit class: 'btn btn-success pull-right' %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="col-md-2"></div>
