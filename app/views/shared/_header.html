@@ -1,23 +1,23 @@
 <div class="col-md-2"></div>
 
 <div class="col-md-8">
-	<div class="page-header">
-		<div id="page-header">
-			<div id="header">
-				<div id="title">
-             		<a href="<%= root_path %>">Make it stupid simple</a>
-            	</div>
-            </div>
-			<div class="menu">
-				<% if user_signed_in? %>
-					<%= link_to('New Gist', new_gist_path, class: 'pull-left') %>
-					<%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>
-				<% else %>
-					<%= link_to('Sign in', new_user_session_path) %>
-				<% end %>
-			</div>
-		</div>
-	</div>
+  <div class="page-header">
+    <div id="page-header">
+      <div id="header">
+        <div id="title">
+          <a href="<%= root_path %>">Make it stupid simple</a>
+        </div>
+      </div>
+      <div class="menu">
+        <% if user_signed_in? %>
+        <%= link_to('New Gist', new_gist_path, class: 'pull-left') %>
+        <%= link_to('Sign out', destroy_user_session_path, :method => :delete) %>
+        <% else %>
+        <%= link_to('Sign in', new_user_session_path) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="col-md-2"></div>
