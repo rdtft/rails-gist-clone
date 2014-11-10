@@ -17,7 +17,7 @@
   <div id="comments">
     <% @gist.comments.each do |comment| %>
       <div class="panel panel-info">
-        <div class="panel-heading"><%= comment.user.email %></div>
+        <div class="panel-heading"><%= comment.created_at.to_s(:long) %> by <%= comment.user.email %></div>
         <div class="panel-body">
           <%== comment.body.gsub(/\n/, "</br>") %>
         </div>
