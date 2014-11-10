@@ -18,3 +18,9 @@ Test accounts:
 |rdtft@me.com     | foobarbaz   |
 |joe@erlang.com   | spawn-foobar|
 |william@lost.com | 24-foobarbaz|
+
+Screenshots
+---
+![](./screenshot/Screenshot-01.png)
+![](./screenshot/Screenshot-02.png)
+![](./screenshot/Screenshot-03.png)
