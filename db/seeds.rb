@@ -17,7 +17,7 @@ u1 = User.create(email: 'rdtft@me.com', password: 'foobarbaz')
 u2 = User.create(email: 'joe@erlang.com', password: 'spawn-foobar')
 u3 = User.create(email: 'william@lost.com', password: '24-foobarbaz')
 
-g1 = Gist.create(user_id: u1.id, description: 'routes',   content: file_contents('config/routes.rb'))
+g1 = Gist.create(user_id: u1.id, description: 'seeds.rb',   content: file_contents('db/seeds.rb'))
 g2 = Gist.create(user_id: u1.id, description: '',  		 content: file_contents('config/application.rb'), private: true)
 g3 = Gist.create(user_id: u1.id, description: 'Gemfile',  content: file_contents('Gemfile'))
 g4 = Gist.create(user_id: u2.id, description: 'Rakefile', content: file_contents('Rakefile'))
