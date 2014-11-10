@@ -8,3 +8,13 @@ HOWTO Setup
   $ rake db:migrate
   $ rake db:seed
 ```
+
+Demo [here](http://gist-farm.herokuapp.com/)
+---
+Test accounts:
+
+|login|password|
+|-----------------|-------------|
+|rdtft@me.com     | foobarbaz   |
+|joe@erlang.com   | spawn-foobar|
+|william@lost.com | 24-foobarbaz|
