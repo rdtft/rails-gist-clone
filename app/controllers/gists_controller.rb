@@ -2,29 +2,21 @@ class GistsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_gist, only: [:edit, :update, :destroy]
 
-  # GET /gists
-  # GET /gists.json
   def index
     @gists = Gist.opened
   end
 
-  # GET /gists/1
-  # GET /gists/1.json
   def show
     @gist = Gist.find(params[:id])
   end
 
-  # GET /gists/new
   def new
     @gist = current_user.gists.new
   end
 
-  # GET /gists/1/edit
   def edit
   end
 
-  # POST /gists
-  # POST /gists.json
   def create
     @gist = current_user.gists.create(gist_params)
 
@@ -39,8 +31,6 @@ class GistsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /gists/1
-  # PATCH/PUT /gists/1.json
   def update
     respond_to do |format|
       if @gist.update(gist_params)
@@ -53,8 +43,6 @@ class GistsController < ApplicationController
     end
   end
 
-  # DELETE /gists/1
-  # DELETE /gists/1.json
   def destroy
     @gist.destroy
     respond_to do |format|
