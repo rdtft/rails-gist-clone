@@ -69,7 +69,12 @@ span#about {
 }
 .comment-counter {
     font-size:small;
+    color:#999;
 }
+.comment-counter:hover {
+    color:#666;
+}
+
 #pager {
     text-align:center;
     padding:2em;
