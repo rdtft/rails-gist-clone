@@ -12,5 +12,6 @@
  *
  *= require bootstrap.min
  *= require styles
+ *= require github
  *= require_self
  */

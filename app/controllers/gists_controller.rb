@@ -59,6 +59,6 @@ class GistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gist_params
-      params.require(:gist).permit(:description, :content, :private)
+      params.require(:gist).permit(:description, :content, :language, :private)
     end
 end

@@ -15,9 +15,19 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= f.text_field :description, class: 'form-control', placeholder: 'description' %>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="form-group">
+        <%= f.text_field :description, class: 'form-control', placeholder: 'description' %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.select :language, Pygments.lexers.collect { |l, k| Pygments.lexers[l][:name] }, {include_blank: 'Auto'}, class: 'form-control' %>
+      </div>
+    </div>
   </div>
+
   <div class="form-group">
     <%= f.text_area :content, :rows => 20, class: 'form-control' %>
   </div>

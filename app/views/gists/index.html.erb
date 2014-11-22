@@ -22,7 +22,7 @@
         </div>
 
         <a href="<%= gist_path(gist) %>" class="gist">
-          <pre><code><%= gist.content.split("\n").take(10).join("\n") %></code></pre>
+          <%= gist.highlighted(lines: 10) %>
         </a>
       </div>
     <% end %>
