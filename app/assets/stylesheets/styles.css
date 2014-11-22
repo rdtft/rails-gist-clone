@@ -23,6 +23,7 @@ h1, h2 {
 pre, code {
     font-size:13px;
     line-height: 1;
+    word-wrap: normal;
 }
 p {
     margin-top:0.7em;
