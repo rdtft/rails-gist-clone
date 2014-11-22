@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'slim'
 gem 'devise'
 gem 'thin'
 gem 'pygments.rb'

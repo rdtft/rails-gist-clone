@@ -1,0 +1,12 @@
+#comments
+  - @gist.comments.each do |comment|
+    .row
+      .col-md-1= gravatar_img(comment.user.email)
+      .col-md-11
+        div class="panel panel-info"
+          .panel-heading
+            strong
+              = comment.user.email
+            = " commented #{time_ago_in_words(comment.created_at)} ago"
+          .panel-body
+            == comment.body.gsub(/\n/, "</br>")

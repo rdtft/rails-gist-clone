@@ -1,0 +1,23 @@
+.col-md-2
+.col-md-8
+  .gist
+    .gist-meta
+      .row
+        .col-md-1= gravatar_img(@gist.user.email)
+
+        .col-md-6
+          .gist-description= @gist.description
+          .gist-created= "#{time_ago_in_words(@gist.created_at)} ago by #{@gist.user.email}"
+
+        .col-md-5
+          .pull-right
+            - if user_signed_in? && current_user.id == @gist.user_id 
+              = link_to 'Edit', edit_gist_path(@gist), class: 'btn btn-default'
+              = " "
+              = link_to 'Destroy', @gist, method: :delete, data: { confirm: 'Are you sure?' },  class: 'btn btn-danger'
+
+    = @gist.highlighted
+
+    = render 'comments/show', locals: {comments: @gist.comments}
+    = render 'comments/form', locals: {gist: @gist} if user_signed_in?
+.col-md-2

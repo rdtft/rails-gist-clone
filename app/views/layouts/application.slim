@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Gist clone
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+    .container
+      .row = render 'shared/header'
+      .row = render partial: 'shared/flash_messages', flash: flash
+      .row = yield
+      </br>
+      .row = render 'shared/footer'

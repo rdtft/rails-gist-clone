@@ -1,0 +1,15 @@
+.col-md-2
+
+.col-md-8
+  .page-header
+    #page-header
+      #header
+        #title
+          = link_to 'Make it stupid simple', root_path
+      .menu
+        - if user_signed_in?
+          = link_to 'New Gist', new_gist_path, class: 'pull-left'
+          = link_to 'Sign out', destroy_user_session_path, method: :delete
+        - else
+          = link_to 'Sign in', new_user_session_path
+.col-md-2

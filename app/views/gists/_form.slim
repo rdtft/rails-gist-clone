@@ -1,0 +1,30 @@
+.col-md-2
+
+.col-md-8
+  = form_for(@gist) do |f|
+    -if @gist.errors.any?
+      div class="panel panel-danger"
+        .panel-heading
+          = "#{pluralize(@gist.errors.count, 'error')} prohibited this gist from being saved:"
+        .panel-body
+          ul
+            - @gist.errors.full_messages.each do |message|
+              li= message
+    .row
+      .col-md-8
+        .form-group
+          = f.text_field :description, class: 'form-control', placeholder: 'description'
+      .col-md-4
+        .form-group
+          = f.select :language, Pygments.lexers.collect { |l, k| Pygments.lexers[l][:name] }, {include_blank: 'Auto'}, class: 'form-control'
+
+    .form-group
+      = f.text_area :content, :rows => 20, class: 'form-control'
+    .checkbox
+      label
+        = f.check_box :private
+        = "Private"
+    .actions
+      = f.submit class: 'btn btn-success pull-right'
+
+.col-md-2
