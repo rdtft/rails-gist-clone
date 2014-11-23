@@ -21,8 +21,8 @@ u3 = User.create(email: 'aaron.patterson@gmail.com', password: '24-foobarbaz')
 g1 = Gist.create(user_id: u1.id, language: 'Ruby', description: 'seeds.rb', content: file_contents('db/seeds.rb'))
 g2 = Gist.create(user_id: u1.id, language: 'Ruby', description: '', content: file_contents('config/application.rb'), private: true)
 g3 = Gist.create(user_id: u1.id, language: 'Ruby', description: 'Gemfile', content: file_contents('Gemfile'))
-g4 = Gist.create(user_id: u2.id, language: 'Erlang', description: 'My favorite Erlang program',content: "
-universal_server() ->
+g4 = Gist.create(user_id: u2.id, language: 'Erlang', description: 'My favorite Erlang program',content:
+"universal_server() ->
     receive
        {become, F} ->
            F()
