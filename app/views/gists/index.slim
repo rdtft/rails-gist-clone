@@ -5,14 +5,23 @@
       .gist
         .gist-meta
           .row
-            .col-md-1 = gravatar_img(gist.user.email)
+            .col-md-1.gist-avatar = gravatar_img(gist.user.email)
             .col-md-11
               .pull-right
                 a.comment-counter href="{gist_path(gist)}#comments"
                   span class="glyphicon glyphicon-comment"
                   = " #{gist.comments.count} comments"
               .gist-description = gist.description
-              = "#{time_ago_in_words(gist.created_at)} ago by #{gist.user.email}"
+              .gist-timestamp= "#{time_ago_in_words(gist.created_at)} ago by #{gist.user.email}"
 
-        a.gist href=gist_path(gist) = gist.highlighted(lines: 10)
+        .gist-content
+          a.gist href=gist_path(gist)
+            table
+              tbody
+                tr
+                  td.line-numbers
+                    - gist.content.lines.take(10).count.times do |i|
+                      span.line-number = i + 1
+                  td.line-data
+                    = gist.highlighted(lines: 10)
   .col-md-2
